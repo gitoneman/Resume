@@ -9,19 +9,42 @@
 	padding: 0;
 }
 body {
-	background-image: url(../images/background.png);
+	background-image: url(../images/body-bkg.png);
 	font-family: "宋体" serif;
+
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+a:hover {
+	text-decoration: underline;
+}
+.clearfix:after {
+	content: ",";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
 }
 
 /*简历头部*/
 #header {
 	width: 100%;
-	background: -webkit-gradient(linear,left top,left bottom,from(#a0d8ef),to(#2ca9e1));
+	
 	box-shadow: 0 5px 10px rgb(121, 112, 112);
+	background: -webkit-gradient(linear,left top,left bottom,from(#a0d8ef),to(#2ca9e1));
+	background: -moz-linear-gradient(left,#a0d8ef,#2ca9e1) ;
+	background: -ms-linear-gradient(left,#a0d8ef,#2ca9e1) ;
+	background: -o-linear-gradient(left,#a0d8ef,#2ca9e1) ;
+	background: linear-gradient(left,#a0d8ef,#2ca9e1) ;
+	position: relative;
+	 		
 	
 }
 #header img {
-	position: fixed;
+	position: absolute;
 	display: block;
 	width: 150px;
 	height: 150px;
@@ -52,61 +75,46 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
-#intro>div {
-	width: 0px;
-	height: 0px;
-	color: #fff;
-	background: #ccc;
-	position: absolute;
-	font-size: 26px;
-	/*padding: 5px 10px;*/
-	display: none;
-}
-
-
-
-/*简历内容左侧*/
-
-/*#content ul {
-	list-style: none;
+#intro {
+	margin-top: 8px;
+	background: url(../images/body-bkg.png);
 	
-	margin-top: 10px;
-	background: rgb(153, 154, 155);
 
 }
-#content ul li {
-	font-size: 26px;
 
-	line-height: 36px;
-	padding:10px; 
-	border-bottom:1px solid rgb(119, 112, 112);
-	color: #fff;
-	text-align: center;
-	border-right: 4px solid #e5e5e5;
-	border-left: 4px solid #e5e5e5;
-}
-#content ul li:last-child {
-	border-bottom: none;
-}
-#content ul a {
-	text-decoration: none;
-	color: #fff;
-}
-#content ul li:hover {
-	border-right:none;
-	background: #fff;
-}*/
-
-/*简历内容右侧*/
-#content-main {
-	-webkit-flex: 4;
-	margin-top: 10px;
-}
-#progress {
-	width: 100%;
+.left-side {
+	float: left;
+	width: 48%;
 	height: 100%;
+	border-right: 10px solid #ccc;
+	padding-right: 10px;
 }
-/*简历尾部*/
-#footer {
 
+.right-side {
+	float: right;
+	width: 48%;
+	height: 100%;
+
+	
+}
+.yhead {
+	font-size: 56px;
+	padding-right: 50px;
+	margin-top: 30px;
+	text-shadow: 1px 1px 2px #000;
+}
+.block {
+	background: #464646;
+	opacity: 0.8;
+	font-size: 26px;
+	max-width: 300px;
+	text-shadow: 1px 1px 2px #646464;
+	color: #fff;
+	padding: 20px 10px;
+	border: 5px solid #000;
+	margin: 100px 0 100px -6666px;
+	
+}
+.right {
+	float: right;
 }

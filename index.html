@@ -1,44 +1,39 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Resume</title>
 	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/Collision.js"></script>
+	<script src="js/canvas.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<style>
+
+	</style>
 	<script>
 		$(function(){
-			// 变量
-			var $header    = $("#header");
-			var w          = $(window).width();
-			var h          =$(window).height();
-			var $aDiv      = $(".year");
-			var $aP        = $("#intro p");
-			var $scrollnew = h/5;
-			var $length    = $aP.length;
-
-			// 设置每层高度
-			$aDiv.css("height",h);			
+			var $header = $("#header");
+			var w=$(window).width();
+			var h=$(window).height();
+			var $aDiv = $(".year");
+			var $aP = $("#intro p");
+			var $scrollnew = 0;
+			var $length = $aP.length;
+			$aDiv.css("height",h);
+			
 			$header.css("height",h).find("img")
 				.css({"left": w/2-75,"top": 2*h/3})
 					.end()
 						.find("#motto")
 							.css({"left": 3*w/10,"top": h/5});
-
-			// 设置window滚动事件，动画效果
 			$(window).scroll(function(){
-				var $scroll = $(window).scrollTop();
-				
-				if ($scroll >$scrollnew)
-				{
+
 					$aP.each(function(index)
 						{
+							
 							$(this).animate({"marginLeft":"0"},index*2000);
 						});
-				}
 
-				$scrollnew = $scroll;
-
-				// 进度条
 				if($scroll >= 3*h/2)
 				{
 					$(".first").find(".left-side").css("border-color","red");
@@ -78,16 +73,16 @@
 	</script>
 </head>
 <body>
-	<header id="header">
+	<div id="header">
 		<div id="motto">
 			<p><span>衣</span>带渐宽终不悔</p>
 			<p>为伊消得人憔悴</p>
 			<p><small>----致前端</small></p>
 		</div>		
 		<img src="images/1.png" alt="logo">
-	</header>
-	<!-- end header -->
-	<article id="content">
+	</div>
+
+	<div id="content">
 		<div id="intro">
 			<div class="first year">
 				<div class="left-side">
@@ -100,7 +95,6 @@
 					
 				</div>
 			</div>
-			<!-- end 大一 -->
 			<div class="second year">
 				<div class="left-side">
 					<p class="yhead right">大学二年级</p>
@@ -110,7 +104,6 @@
 					<p class="block">学习lamp教程</p>
 				</div>
 			</div>
-			<!-- end 大二 -->
 			<div class="third year">
 				<div class="left-side">
 					<p class="yhead right">大学三年级</p>
@@ -121,7 +114,6 @@
 					<p class="block">开始接触html5，js</p>
 				</div>
 			</div>
-			<!-- end 大三 -->
 			<div class="fouth year">
 				<div class="left-side">
 					<p class="yhead right">大学四年级</p>
@@ -132,11 +124,11 @@
 					
 				</div>
 			</div>
-			<!-- end 大四 -->
+			
 		</div>
 
 		
-	</article>
-	<!-- end container -->
+	</div>
+	
 </body>
 </html>
